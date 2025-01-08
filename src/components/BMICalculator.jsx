@@ -27,7 +27,7 @@ const BMICalculator = () => {
       bmiCategoryMessage = "You are Normal Weight";
     } else if (bmi >= 23 && bmi <= 24.9) {
       style = { color: "#ff9800", fontWeight: "bold" };
-      bmiCategoryMessage = "You are at risk of Overweight";
+      bmiCategoryMessage = "You are at risk of becoming overweight";
     } else if (bmi >= 25 && bmi <= 29.9) {
       style = { color: "#ff5722", fontWeight: "bold" };
       bmiCategoryMessage = "You are Overweight";
