@@ -14,24 +14,29 @@ const BMICalculator = () => {
       alert("Weight and Height must be positive numbers & should not be 0");
       return;
     }
-    let bmi = (inputWeight * 10000) / (inputHeight * inputHeight);
+
+    const weight = parseFloat(inputWeight);
+    const height = parseFloat(inputHeight);
+    let bmi = (weight * 10000) / (height * height);
     console.log(typeof bmi);
+
+    bmi = Math.round(bmi * 10) / 10;
     setBMI(bmi.toFixed(1));
     let style = {};
     let bmiCategoryMessage = "";
     if (bmi < 18.5) {
       style = { color: "#f44336", fontWeight: "bold" };
       bmiCategoryMessage = "You are Underweight";
-    } else if (bmi >= 18.5 && bmi <= 22.9) {
+    } else if (bmi >= 18.5 && bmi < 23) {
       style = { color: "#4caf50", fontWeight: "bold" };
       bmiCategoryMessage = "You are Normal Weight";
-    } else if (bmi >= 23 && bmi <= 24.9) {
+    } else if (bmi >= 23 && bmi < 25) {
       style = { color: "#ff9800", fontWeight: "bold" };
       bmiCategoryMessage = "You are at risk of becoming overweight";
-    } else if (bmi >= 25 && bmi <= 29.9) {
+    } else if (bmi >= 25 && bmi < 30) {
       style = { color: "#ff5722", fontWeight: "bold" };
       bmiCategoryMessage = "You are Overweight";
-    } else if (bmi > 30) {
+    } else if (bmi >= 30) {
       style = { color: "#d32f2f", fontWeight: "bold" };
       bmiCategoryMessage = "You are Obese";
     }
